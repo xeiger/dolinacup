@@ -1,0 +1,141 @@
+<%= render :partial => 'partials/titlebar', locals: {title: 'Zápasy'} %>
+
+<%
+
+  matches_blue = [
+    [2, 'Martin Krupa','Honza Schwarz','3:6','3:6',''],
+    [2, 'Leoš Rek','Pavel Mžik','3:6','4:6',''],
+    [2, 'Mira Kokeš','Honza Schwarz','1:6','3:6',''],
+    [2, 'Peťa Kutáč','Martin Krupa','3:6','0:6',''],
+    [1, 'Pavel Mžik','Mira Kokeš','6:4','7:5',''],
+    [2, 'Mira Kokeš','Martin Krupa','2:6','2:6',''],
+    [0, 'Michal Strakoš','Martin Krupa','','',''],
+    [0, 'Mira Kokeš','Peťa Kutáč','','',''],
+    [0, 'Honza Schwarz','Leoš Rek','','',''],
+    [0, 'Pavel Mžik','Michal Strakoš','','',''],
+    [0, 'Leoš Rek','Mira Kokeš','','',''],
+    [0, 'Peťa Kutáč','Pavel Mžik','','',''],
+    [0, 'Honza Schwarz','Michal Strakoš','','',''],
+    [0, 'Pavel Mžik','Honza Schwarz','','',''],
+    [0, 'Leoš Rek','Peťa Kutáč','','',''],
+    [0, 'Michal Strakoš','Mira Kokeš','','',''],
+    [0, 'Martin Krupa','Leoš Rek','','',''],
+    [0, 'Michal Strakoš','Peťa Kutáč','','',''],
+    [0, 'Martin Krupa','Pavel Mžik','','',''],
+    [0, 'Leoš Rek','Michal Strakoš','','',''],
+    [0, 'Peťa Kutáč','Honza Schwarz','','','']
+  ]
+
+  matches_red = [
+    [2, 'Libor Stanislav','Tomáš Bartoň','2:6','1:6',''],
+    [1, 'Pepa Stromšík','Peťa Lehnert','6:1','6:1',''],
+    [2, 'Luďa Křístek','Honza Tabach','0:6','1:6',''],
+    [1, 'Honza Tabach','Libor Stanislav','3:6','6:1','6:3'],
+    [2, 'Peťa Lehnert','Radim Běčák','1:6','0:6',''],
+    [1, 'Tomáš Bartoň','Radim Běčák','7:6','4:6','TB 7:4'],
+    [1, 'Pepa Stromšík','Luďa Křístek','6:3','6:2',''],
+    [2, 'Peťa Lehnert','Tomáš Bartoň','3:6','6:7',''],
+    [2, 'Peťa Lehnert','Libor Stanislav','7:5','5:7','TB 6:10'],
+    [0, 'Tomáš Bartoň','Pepa Stromšík','','',''],
+    [0, 'Honza Tabach','Tomáš Bartoň','','',''],
+    [0, 'Radim Běčák','Pepa Stromšík','','',''],
+    [0, 'Luďa Křístek','Peťa Lehnert','','',''],
+    [0, 'Luďa Křístek','Radim Běčák','','',''],
+    [0, 'Honza Tabach','Peťa Lehnert','','',''],
+    [0, 'Libor Stanislav','Pepa Stromšík','','',''],
+    [0, 'Tomáš Bartoň','Luďa Křístek','','',''],
+    [0, 'Radim Běčák','Libor Stanislav','','',''],
+    [0, 'Pepa Stromšík','Honza Tabach','','',''],
+    [0, 'Libor Stanislav','Luďa Křístek','','',''],
+    [0, 'Honza Tabach','Radim Běčák','','','']
+  ]
+%>
+
+<!-- Content -->
+<div id="content">
+  <div class="container">
+
+    <div class="row">
+      <div class="col-md-12">
+
+        <div class="space20"></div>
+
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" role="tablist">
+          <li role="presentation" class="active"><a href="#blue" aria-controls="blue" role="tab" data-toggle="tab">Modrá skupina</a></li>
+          <li role="presentation"><a href="#red" aria-controls="red" role="tab" data-toggle="tab">Červená skupina</a></li>
+        </ul>
+
+        <!-- Tab panes -->
+        <div class="tab-content">
+
+          <div role="tabpanel" class="tab-pane active" id="blue">
+            <div class="space20"></div>
+
+            <table class="table table-bordered">
+                <tr class="result">
+                  <th class="v-middle" style="width: 5%;">#</th>
+                  <th class="v-middle" colspan="3" style="width: 50%;"></th>
+                  <th class="v-middle" style="width: 15%">1. set</th>
+                  <th class="v-middle" style="width: 15%">2. set</th>
+                  <th class="v-middle" style="width: 15%">3. set</th>
+                </tr>
+
+                <% matches_blue.each_with_index do |m, index| %>
+
+                  <tr class="result">
+                    <td style="width: 5%;"><%= index + 1 %></td>
+                    <td style="width: 23%;" class="<%= 'lightblue' if m[0] == 1 %>"><%= m[1] %></td>
+                    <td style="width: 4%;">:</td>
+                    <td style="width: 23%;" class="<%= 'lightblue' if m[0] == 2 %>"><%= m[2] %></td>
+                    <td style="width: 15%;"><%= m[3] %></td>
+                    <td style="width: 15%;"><%= m[4] %></td>
+                    <td style="width: 15%;"><%= m[5] %></td>
+                  </tr>
+
+                  <% end %>
+
+            </table>
+
+          </div>
+
+          <div role="tabpanel" class="tab-pane" id="red">
+            <div class="space20"></div>
+
+            <table class="table table-bordered">
+                <tr class="result">
+                  <th class="v-middle" style="width: 5%;">#</th>
+                  <th class="v-middle" colspan="3" style="width: 50%;"></th>
+                  <th class="v-middle" style="width: 15%">1. set</th>
+                  <th class="v-middle" style="width: 15%">2. set</th>
+                  <th class="v-middle" style="width: 15%">3. set</th>
+                </tr>
+
+                <% matches_red.each_with_index do |m, index| %>
+
+                  <tr class="result">
+                    <td style="width: 5%;"><%= index + 1 %></td>
+                    <td style="width: 23%;" class="<%= 'lightred' if m[0] == 1 %>"><%= m[1] %></td>
+                    <td style="width: 4%;">:</td>
+                    <td style="width: 23%;" class="<%= 'lightred' if m[0] == 2 %>"><%= m[2] %></td>
+                    <td style="width: 15%;"><%= m[3] %></td>
+                    <td style="width: 15%;"><%= m[4] %></td>
+                    <td style="width: 15%;"><%= m[5] %></td>
+                  </tr>
+
+                  <% end %>
+
+            </table>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+    <div class="space50"></div> 
+
+  </div>
+</div>
+<!-- Content End -->
+

@@ -5,8 +5,14 @@ source 'https://rubygems.org'
 gem 'rails', '4.2.4'
 gem 'pg'
 
+gem "therubyracer"
+gem "less-rails"
+
 gem 'twitter-bootstrap-rails'
 gem 'jquery-rails'
+
+gem 'turbolinks'
+gem 'jbuilder', '~> 2.0'
 
 
 group :production do

@@ -1,0 +1,13 @@
+<div class="col-md-9">
+  <div class="row space60"></div>
+    <nav id="nav" role="navigation">
+      <a href="#nav" title="Show navigation">Show navigation</a>
+      <a href="#" title="Hide navigation">Hide navigation</a>
+      <ul class="clearfix" style="padding-left: 0px !important;">
+        <li class="<%= 'active' if params[:action].eql?('home') %>"><%= link_to 'Úvod', home_page_url %></li>
+        <li class="<%= 'active' if params[:action].eql?('tables') %>"><%= link_to 'Tabulky', tables_page_path %></li>
+        <li class="<%= 'active' if params[:action].eql?('matches') %>"><%= link_to 'Zápasy', matches_page_path %></li>
+      </ul>
+    </nav>
+  </div> 
+</div> 
