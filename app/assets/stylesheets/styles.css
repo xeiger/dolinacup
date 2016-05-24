@@ -925,7 +925,7 @@ tr.result > th {
 td {
   vertical-align: middle !important;
   text-align:center!important;
-  font-size: 18px;
+  font-size: 16px;
   background: #ececec;
   border-radius:0px !important;
   border:2px solid white !important;
@@ -1396,7 +1396,7 @@ table a:hover{
   color:#8c8e90;
   font-size:14px;
   line-height:22px;
-  padding:30px 41px 20px 41px;
+  padding:20px 41px 20px 41px;
   background:#333333;
   border-bottom:2px solid #060606;
   overflow:hidden;  
