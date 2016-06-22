@@ -2,25 +2,25 @@
 <%
 
   table_blue = [
-    ['', 'Pavel<br>Mžik', 'Martin<br>Krupa', 'Mira<br>Kokeš', 'Leoš<br>Rek', 'Honza<br>Schwarz', 'Peťa<br>Kutač', 'Michal<br>Strakoš'],
-    ['Pavel<br>Mžik', '', '6:7, 1:6', '6:4, 7:5', '6:3, 6:4', '6:3, 1:6, 3:6', '', '0:6, 6:4, 7:6'],
-    ['Martin<br>Krupa', '7:6, 6:1', '', '6:2, 6:2', '', '3:6, 3:6', '6:3, 6:0', '4:6, 2:6'],
-    ['Mira<br>Kokeš', '4:6, 5:7', '2:6, 2:6', '', '7:6, 6:4', '1:6, 3:6', '', ''],
-    ['Leoš<br>Rek', '3:6, 4:6', '', '6:7, 4:6', '', '', '', '1:6, 1:6'],
-    ['Honza<br>Schwarz', '3:6, 6:1, 6:3', '6:3, 6:3', '6:1, 6:3', '', '', '', ''],
-    ['Peťa<br>Kutač', '', '3:6, 0:6', '', '', '', '', ''],
-    ['Michal<br>Strakoš', '6:0, 4:6, 6:7', '6:4, 6:2', '', '6:1, 6:1', '', '', '']
+    ['', 'Pavel<br>Mžik', 'Martin<br>Krupa', 'Mira<br>Kokeš', 'Leoš<br>Rek', 'Honza<br>Schwarz', 'Peťa<br>Kutač', 'Michal<br>Strakoš', 'Body', 'Pořadí'],
+    ['Pavel<br>Mžik', '', '6:7, 1:6', '6:4, 7:5', '6:3, 6:4', '6:3, 1:6, 3:6', '', '0:6, 6:4, 7:6', '3', ''],
+    ['Martin<br>Krupa', '7:6, 6:1', '', '6:2, 6:2', '6:2, 6:0', '3:6, 3:6', '6:3, 6:0', '4:6, 2:6', '4', ''],
+    ['Mira<br>Kokeš', '4:6, 5:7', '2:6, 2:6', '', '7:6, 6:4', '1:6, 3:6', '', '1:6, 1:6', '1', ''],
+    ['Leoš<br>Rek', '3:6, 4:6', '2:6, 0:6', '6:7, 4:6', '', '', '', '1:6, 1:6', '0', ''],
+    ['Honza<br>Schwarz', '3:6, 6:1, 6:3', '6:3, 6:3', '6:1, 6:3', '', '', '', '', '3', ''],
+    ['Peťa<br>Kutač', '', '3:6, 0:6', '', '', '', '', '', '0', ''],
+    ['Michal<br>Strakoš', '6:0, 4:6, 6:7', '6:4, 6:2', '6:1, 6:1', '6:1, 6:1', '', '', '', '3', '']
   ]
 
   table_red = [
-    ['', 'Tomáš<br>Bartoň', 'Peťa<br>Lehnert', 'Luďa<br>Křístek', 'Libor<br>Stanislav', 'Radim<br>Běčák', 'Honza<br>Tabach', 'Pepa<br>Stromšík'],
-    ['Tomáš<br>Bartoň', '', '6:3, 7:6', '', '6:2, 6:1', '7:6, 4:6, 7:4', '1:6, 6:3, 7:5', ''],
-    ['Peťa<br>Lehnert', '3:6, 6:7', '', '', '7:5, 5:7, 6:10', '1:6, 0:6', '', '1:6, 1:6'],
-    ['Luďa<br>Křístek', '', '', '', '', '', '0:6, 1:6', '3:6, 2:6'],
-    ['Libor<br>Stanislav', '2:6, 1:6', '5:7, 7:5, 10:6', '', '', '', '6:3, 1:6, 3:6', ''],
-    ['Radim<br>Běčák', '6:7, 6:4, 4:7', '6:1, 6:0', '', '', '', '', ''],
-    ['Honza<br>Tabach', '6:1, 3:6, 5:7', '', '6:0, 6:1', '3:6, 6:1, 6:3', '', '', ''],
-    ['Pepa<br>Stromšík', '', '6:1, 6:1', '6:3, 6:2', '', '', '', '']
+    ['', 'Tomáš<br>Bartoň', 'Peťa<br>Lehnert', 'Luďa<br>Křístek', 'Libor<br>Stanislav', 'Radim<br>Běčák', 'Honza<br>Tabach', 'Pepa<br>Stromšík', 'Body', 'Pořadí'],
+    ['Tomáš<br>Bartoň', '', '6:3, 7:6', '', '6:2, 6:1', '7:6, 4:6, 7:4', '1:6, 6:3, 7:5', '', '4', ''],
+    ['Peťa<br>Lehnert', '3:6, 6:7', '', '', '7:5, 5:7, 6:10', '1:6, 0:6', '', '1:6, 1:6', '0', ''],
+    ['Luďa<br>Křístek', '', '', '', '', '', '0:6, 1:6', '3:6, 2:6', '0', ''],
+    ['Libor<br>Stanislav', '2:6, 1:6', '5:7, 7:5, 10:6', '', '', '', '6:3, 1:6, 3:6', '', '1', ''],
+    ['Radim<br>Běčák', '6:7, 6:4, 4:7', '6:1, 6:0', '', '', '', '', '', '1', ''],
+    ['Honza<br>Tabach', '6:1, 3:6, 5:7', '', '6:0, 6:1', '3:6, 6:1, 6:3', '', '', '', '2', ''],
+    ['Pepa<br>Stromšík', '', '6:1, 6:1', '6:3, 6:2', '', '', '', '', '2', '']
   ]
 
 %>
@@ -52,10 +52,15 @@
                 <tr class="result">
 
                   <% row.each_with_index do |col, c_index| %>
-                    <% if col.include?('<br>') %>
-                      <th style="width: 12%"><%=raw col %></th>
+                    <%
+                      width = c_index > 7 ? '6%' : '11%'
+                      clss = r_index == c_index ? 'lightblue' : ''
+                      clss << 'lightgreen bold' if c_index > 7
+                    %>
+                    <% if (r_index == 0 and c_index > 0) or (r_index > 0 and c_index ==0) %>
+                      <th style="width: <%= width %>"><%=raw col %></th>
                     <% else %>
-                      <td style="width: 12%" class="<%= 'lightblue' if r_index == c_index %>"><%=raw col %></td>
+                      <td style="width: <%= width %>" class="<%= clss %>"><%=raw col %></td>
                     <% end %>
                   <% end %>
 
@@ -75,10 +80,15 @@
                 <tr class="result">
 
                   <% row.each_with_index do |col, c_index| %>
-                    <% if col.include?('<br>') %>
-                      <th style="width: 12%"><%=raw col %></th>
+                    <%
+                      width = c_index > 7 ? '6%' : '11%'
+                      clss = r_index == c_index ? 'lightred' : ''
+                      clss << 'lightgreen bold' if c_index > 7
+                    %>
+                    <% if (r_index == 0 and c_index > 0) or (r_index > 0 and c_index ==0) %>
+                      <th style="width: <%= width %>"><%=raw col %></th>
                     <% else %>
-                      <td style="width: 12%" class="<%= 'lightred' if r_index == c_index %>"><%=raw col %></td>
+                      <td style="width: <%= width %>" class="<%= clss %>"><%=raw col %></td>
                     <% end %>
                   <% end %>
 

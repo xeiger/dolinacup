@@ -964,6 +964,10 @@ td.lightred, th.lightred {
   background: #fb8865 !important;
 }
 
+td.lightgreen, th.lightgreen {
+  background: #a4ffd3 !important;
+}
+
 td.bold {
   font-weight: bold;
 }
