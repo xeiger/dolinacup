@@ -3,34 +3,35 @@
 <%
 
   matches_blue = [
-    [2, 'Martin Krupa','Honza Schwarz','3:6','3:6',''],
-    [2, 'Leoš Rek','Pavel Mžik','3:6','4:6',''],
-    [2, 'Mira Kokeš','Honza Schwarz','1:6','3:6',''],
-    [1, 'Pavel Mžik','Mira Kokeš','6:4','7:5',''],
-    [2, 'Mira Kokeš','Martin Krupa','2:6','2:6',''],
-    [2, 'Leoš Rek','Mira Kokeš','6:7','4:6',''],
-    [1, 'Martin Krupa','Pavel Mžik','7:6','6:1',''],
-    [2, 'Pavel Mžik','Honza Schwarz','6:3','1:6','3:6'],
-    [2, 'Leoš Rek','Michal Strakoš','1:6','1:6',''],
-    [1, 'Michal Strakoš','Martin Krupa','6:4','6:2',''],
-    [1, 'Pavel Mžik','Michal Strakoš','0:6','6:4','7:6 (10:8)'],
-    [1, 'Michal Strakoš','Mira Kokeš','6:1','6:1',''],
-    [1, 'Martin Krupa','Leoš Rek','6:2','6:0',''],
-    [1, 'Honza Schwarz','Michal Strakoš','7:5','6:4',''],
-    [2, 'Libor Stanislav','Tomáš Bartoň','2:6','1:6',''],
-    [1, 'Pepa Stromšík','Peťa Lehnert','6:1','6:1',''],
-    [1, 'Honza Tabach','Libor Stanislav','3:6','6:1','6:3'],
-    [2, 'Peťa Lehnert','Radim Běčák','1:6','0:6',''],
-    [1, 'Tomáš Bartoň','Radim Běčák','7:6','4:6','TB 7:4'],
-    [2, 'Peťa Lehnert','Tomáš Bartoň','3:6','6:7',''],
-    [2, 'Peťa Lehnert','Libor Stanislav','7:5','5:7','TB 6:10'],
-    [2, 'Honza Tabach','Tomáš Bartoň','6:1','3:6','5:7'],
-    [1, 'Honza Tabach','Peťa Lehnert','6:2','6:4',''],
-    [1, 'Radim Běčák','Libor Stanislav','6:2','6:4',''],
-    [1, 'Tomáš Bartoň','Pepa Stromšík','6:2','6:4',''],
-    [2, 'Tomáš Bartoň','Honza Schwarz','3:6','4:6',''],
+    [2, 'Peťa Lehnert','Martin Krupa','2:6','0:6',''],
+    [2, 'Tomáš Bartoň','Martin Krupa','1:6','5:7',''],
     [2, 'Peťa Lehnert','Honza Schwarz','0:6','2:6',''],
-    [2, 'Tomáš Bartoň','Martin Krupa','1:6','5:7','']
+    [2, 'Tomáš Bartoň','Honza Schwarz','3:6','4:6',''],
+    [1, 'Tomáš Bartoň','Pepa Stromšík','6:2','6:4',''],
+    [1, 'Radim Běčák','Libor Stanislav','6:2','6:4',''],
+    [1, 'Honza Tabach','Peťa Lehnert','6:2','6:4',''],
+    [2, 'Honza Tabach','Tomáš Bartoň','6:1','3:6','5:7'],
+    [2, 'Peťa Lehnert','Libor Stanislav','7:5','5:7','TB 6:10'],
+    [2, 'Peťa Lehnert','Tomáš Bartoň','3:6','6:7',''],
+    [1, 'Tomáš Bartoň','Radim Běčák','7:6','4:6','TB 7:4'],
+    [2, 'Peťa Lehnert','Radim Běčák','1:6','0:6',''],
+    [1, 'Honza Tabach','Libor Stanislav','3:6','6:1','6:3'],
+    [1, 'Pepa Stromšík','Peťa Lehnert','6:1','6:1',''],
+    [2, 'Libor Stanislav','Tomáš Bartoň','2:6','1:6',''],
+    [1, 'Honza Schwarz','Michal Strakoš','7:5','6:4',''],
+    [1, 'Martin Krupa','Leoš Rek','6:2','6:0',''],
+    [1, 'Michal Strakoš','Mira Kokeš','6:1','6:1',''],
+    [1, 'Pavel Mžik','Michal Strakoš','0:6','6:4','7:6 (10:8)'],
+    [1, 'Michal Strakoš','Martin Krupa','6:4','6:2',''],
+    [2, 'Leoš Rek','Michal Strakoš','1:6','1:6',''],
+    [2, 'Pavel Mžik','Honza Schwarz','6:3','1:6','3:6'],
+    [1, 'Martin Krupa','Pavel Mžik','7:6','6:1',''],
+    [2, 'Leoš Rek','Mira Kokeš','6:7','4:6',''],
+    [2, 'Mira Kokeš','Martin Krupa','2:6','2:6',''],
+    [1, 'Pavel Mžik','Mira Kokeš','6:4','7:5',''],
+    [2, 'Mira Kokeš','Honza Schwarz','1:6','3:6',''],
+    [2, 'Leoš Rek','Pavel Mžik','3:6','4:6',''],
+    [2, 'Martin Krupa','Honza Schwarz','3:6','3:6',''],
   ]
 
   matches_red = [
@@ -46,7 +47,6 @@
     [0, 'Tomáš Bartoň','Michal Strakoš','','',''],
 
     [0, 'Peťa Lehnert','Pavel Mžik','','',''],
-    [0, 'Peťa Lehnert','Martin Krupa','','',''],
     [0, 'Peťa Lehnert','Mira Kokeš','','',''],
     [0, 'Peťa Lehnert','Leoš Rek','','',''],
     [0, 'Peťa Lehnert','Michal Strakoš','','',''],
@@ -81,6 +81,7 @@
 
   ]
   players = ['Pavel Mžik', 'Martin Krupa', 'Mira Kokeš', 'Leoš Rek', 'Honza Schwarz', 'Michal Strakoš', 'Tomáš Bartoň', 'Peťa Lehnert', 'Libor Stanislav', 'Radim Běčák', 'Honza Tabach', 'Pepa Stromšík']
+  matches_count = matches_blue.count
 %>
 
 <!-- Content -->
@@ -116,7 +117,7 @@
                 <% matches_blue.each_with_index do |m, index| %>
 
                   <tr class="result">
-                    <td style="width: 5%;"><%= index + 1 %></td>
+                    <td style="width: 5%;"><%= matches_count - index %></td>
                     <td style="width: 23%;" class="<%= 'lightblue' if m[0] == 1 %>"><%= m[1] %></td>
                     <td style="width: 4%;">:</td>
                     <td style="width: 23%;" class="<%= 'lightblue' if m[0] == 2 %>"><%= m[2] %></td>
