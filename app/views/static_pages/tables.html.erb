@@ -2,22 +2,21 @@
 <%
 
   table_blue = [
-    ['', 'Pavel<br>Mžik', 'Martin<br>Krupa', 'Mira<br>Kokeš', 'Leoš<br>Rek', 'Honza<br>Schwarz', 'Michal<br>Strakoš', 'Tomáš<br>Bartoň', 'Peťa<br>Lehnert', 'Libor<br>Stanislav', 'Radim<br>Běčák', 'Honza<br>Tabach', 'Pepa<br>Stromšík', 'Body'],
-    ['Pavel<br>Mžík', '', '0:2', '2:0', '2:0', '1:2', '2:1', '0:2', '', '', '', '', '', '3'],
-    ['Martin<br>Krupa', '2:0', '', '2:0', '2:0', '0:2', '0:2', '2:0', '2:0', '', '0:2', '', '', '5'],
-    ['Mira<br>Kokeš', '0:2', '0:2', '', '2:0', '0:2', '0:2', '', '', '', '', '', '', '1'],
-    ['Leoš<br>Rek', '0:2', '0:2', '0:2', '', '', '0:2', '', '', '', '', '', '', '0'],
-    ['Honza<br>Schwarz', '2:1', '2:0', '2:0', '', '', '2:0', '2:0', '2:0', '', '2:0', '', '', '7'],
-    ['Michal<br>Strakoš', '1:2', '2:0', '2:0', '2:0', '0:2', '', '', '', '', '', '', '', '3'],
-    ['Tomáš<br>Bartoň', '2:0', '0:2', '', '', '0:2', '', '', '2:0', '2:0', '2:1', '2:1', '2:0', '6'],
-    ['Peťa<br>Lehnert', '', '0:2', '', '', '0:2', '', '0:2', '', '1:2', '0:2', '0:2', '0:2', '0'],
-    ['Libor<br>Stanislav', '', '', '', '', '', '', '0:2', '2:1', '', '0:2', '1:2', '', '1'],
-    ['Radim<br>Běčák', '', '2:0', '', '', '0:2', '', '1:2', '2:0', '2:0', '', '', '', '3'],
-    ['Honza<br>Tabach', '', '', '', '', '', '', '1:2', '2:0', '2:1', '', '', '', '2'],
-    ['Pepa<br>Stromšík', '', '', '', '', '', '', '0:2', '2:0', '', '', '', '', '1']
+    ['', 'Pavel<br>Mžik', 'Martin<br>Krupa', 'Mira<br>Kokeš', 'Leoš<br>Rek', 'Honza<br>Schwarz', 'Michal<br>Strakoš', 'Tomáš<br>Bartoň', 'Peťa<br>Lehnert', 'Libor<br>Stanislav', 'Radim<br>Běčák', 'Honza<br>Tabach', 'Body'],
+    ['Pavel<br>Mžík', '', '0:2', '2:0', '2:0', '1:2', '2:1', '0:2', '', '', '', '', '3'],
+    ['Martin<br>Krupa', '2:0', '', '2:0', '2:0', '0:2', '0:2', '2:0', '2:0', '', '0:2', '', '5'],
+    ['Mira<br>Kokeš', '0:2', '0:2', '', '2:0', '0:2', '0:2', '', '', '', '', '', '1'],
+    ['Leoš<br>Rek', '0:2', '0:2', '0:2', '', '', '0:2', '', '', '', '', '', '0'],
+    ['Honza<br>Schwarz', '2:1', '2:0', '2:0', '', '', '2:0', '2:0', '2:0', '', '2:0', '', '7'],
+    ['Michal<br>Strakoš', '1:2', '2:0', '2:0', '2:0', '0:2', '', '', '', '', '', '', '3'],
+    ['Tomáš<br>Bartoň', '2:0', '0:2', '', '', '0:2', '', '', '2:0', '2:0', '2:1', '2:1', '5'],
+    ['Peťa<br>Lehnert', '', '0:2', '', '', '0:2', '', '0:2', '', '1:2', '0:2', '0:2', '0'],
+    ['Libor<br>Stanislav', '', '', '', '', '', '', '0:2', '2:1', '', '0:2', '1:2', '1'],
+    ['Radim<br>Běčák', '', '2:0', '', '', '0:2', '', '1:2', '2:0', '2:0', '', '', '3'],
+    ['Honza<br>Tabach', '', '', '', '', '', '', '1:2', '2:0', '2:1', '', '', '2'],
   ]
 
-  players = ['Pavel Mžik', 'Martin Krupa', 'Mira Kokeš', 'Leoš Rek', 'Honza Schwarz', 'Michal Strakoš', 'Tomáš Bartoň', 'Peťa Lehnert', 'Libor Stanislav', 'Radim Běčák', 'Honza Tabach', 'Pepa Stromšík']
+  players = ['Pavel Mžik', 'Martin Krupa', 'Mira Kokeš', 'Leoš Rek', 'Honza Schwarz', 'Michal Strakoš', 'Tomáš Bartoň', 'Peťa Lehnert', 'Libor Stanislav', 'Radim Běčák', 'Honza Tabach']
 
 %>
 
@@ -40,7 +39,7 @@
                   <%
                     width = c_index > 12 ? '9%' : '7%'
                     clss = r_index == c_index ? 'lightblue' : ''
-                    clss << 'lightgreen bold' if c_index > 12
+                    clss << 'lightgreen bold' if c_index > 11
                   %>
                   <% if (r_index == 0 and c_index > 0) or (r_index > 0 and c_index ==0) %>
                     <th class="v-middle" style="font-size: 12px; width: <%= width %>"><%=raw col %></th>
