@@ -296,6 +296,7 @@ header {
 }
 
 .head-info {
+  padding-bottom: 10px;
   font-size:16px;
   line-height:22px;
 }
@@ -362,7 +363,7 @@ header {
 			}
 				#nav > ul > li
 				{
-					width: 33%;
+					width: 25%;
 					height: 100%;
 					float: left;
 				}

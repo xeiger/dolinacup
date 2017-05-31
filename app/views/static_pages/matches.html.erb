@@ -1,69 +1,69 @@
-<%= render :partial => 'partials/titlebar', locals: {title: 'Zápasy'} %>
+<%= render :partial => 'partials/titlebar', locals: {title: 'Výsledky zápasů'} %>
 
 <%
 
-  matches_blue = [
-    [0, 'Peťa Lehnert','Michal Strakoš','neodehráno','',''],
-    [2, 'Honza Tabach','Radim Běčák','6:3','6:1','7:6'],
-    [2, 'Peťa Lehnert','Mira Kokeš','6:3','6:3',''],
-    [2, 'Libor Stanislav','Martin Krupa','2:6','1:6',''],
-    [2, 'Honza Tabach','Michal Strakoš','1:6','5:7',''],
-    [1, 'Tomáš Bartoň','Michal Strakoš','skreč','',''],
-    [1, 'Honza Tabach','Leoš Rek','6:2','6:4',''],
-    [2, 'Libor Stanislav','Honza Schwarz','2:6','5:7',''],
-    [1, 'Honza Tabach','Pavel Mžik','6:3','6:4',''],
-    [1, 'Tomáš Bartoň','Mira Kokeš','6:4','6:4',''],
-    [1, 'Radim Běčák','Mira Kokeš','7:5','6:3',''],
-    [2, 'Radim Běčák','Michal Strakoš','2:6','2:6',''],
-    [1, 'Honza Tabach','Martin Krupa','6:3','6:4',''],
-    [1, 'Honza Tabach','Mira Kokeš','6:2','6:4',''],
-    [2, 'Peťa Lehnert','Pavel Mžik','2:6','4:6',''],
-    [1, 'Radim Běčák','Leoš Rek','6:2','6:1',''],
-    [1, 'Libor Stanislav','Michal Strakoš','3:6','6:3','6:4'],
-    [2, 'Libor Stanislav','Pavel Mžik','3:6','6:3','4:6'],
-    [1, 'Honza Schwarz','Leoš Rek','6:1','6:3',''],
-    [2, 'Peťa Lehnert','Leoš Rek','5:7','3:6',''],
-    [1, 'Honza Tabach','Honza Schwarz','4:6','6:3','6:4'],
-    [1, 'Tomáš Bartoň','Leoš Rek','6:3','6:4',''],
-    [2, 'Radim Běčák','Pavel Mžik','6:7','6:3','3:6'],
-    [1, 'Libor Stanislav','Mira Kokeš','6:2','6:2',''],
-    [1, 'Libor Stanislav','Leoš Rek','7:6 (4)','7:5',''],
-    [2, 'Radim Běčák','Honza Schwarz','2:6','5:7',''],
-    [1, 'Radim Běčák','Martin Krupa','6:4','6:1',''],
-    [1, 'Tomáš Bartoň','Pavel Mžik','7:5','6:3',''],
-    [2, 'Peťa Lehnert','Martin Krupa','2:6','0:6',''],
-    [2, 'Tomáš Bartoň','Martin Krupa','1:6','5:7',''],
-    [2, 'Peťa Lehnert','Honza Schwarz','0:6','2:6',''],
-    [2, 'Tomáš Bartoň','Honza Schwarz','3:6','4:6',''],
-    [1, 'Radim Běčák','Libor Stanislav','6:2','6:4',''],
-    [1, 'Honza Tabach','Peťa Lehnert','6:2','6:4',''],
-    [2, 'Honza Tabach','Tomáš Bartoň','6:1','3:6','5:7'],
-    [2, 'Peťa Lehnert','Libor Stanislav','7:5','5:7','TB 6:10'],
-    [2, 'Peťa Lehnert','Tomáš Bartoň','3:6','6:7',''],
-    [1, 'Tomáš Bartoň','Radim Běčák','7:6','4:6','TB 7:4'],
-    [2, 'Peťa Lehnert','Radim Běčák','1:6','0:6',''],
-    [1, 'Honza Tabach','Libor Stanislav','3:6','6:1','6:3'],
-    [2, 'Libor Stanislav','Tomáš Bartoň','2:6','1:6',''],
-    [1, 'Honza Schwarz','Michal Strakoš','7:5','6:4',''],
-    [1, 'Martin Krupa','Leoš Rek','6:2','6:0',''],
-    [1, 'Michal Strakoš','Mira Kokeš','6:1','6:1',''],
-    [1, 'Pavel Mžik','Michal Strakoš','0:6','6:4','7:6 (10:8)'],
-    [1, 'Michal Strakoš','Martin Krupa','6:4','6:2',''],
-    [2, 'Leoš Rek','Michal Strakoš','1:6','1:6',''],
-    [2, 'Pavel Mžik','Honza Schwarz','6:3','1:6','3:6'],
-    [1, 'Martin Krupa','Pavel Mžik','7:6','6:1',''],
-    [2, 'Leoš Rek','Mira Kokeš','6:7','4:6',''],
-    [2, 'Mira Kokeš','Martin Krupa','2:6','2:6',''],
-    [1, 'Pavel Mžik','Mira Kokeš','6:4','7:5',''],
-    [2, 'Mira Kokeš','Honza Schwarz','1:6','3:6',''],
-    [2, 'Leoš Rek','Pavel Mžik','3:6','4:6',''],
-    [2, 'Martin Krupa','Honza Schwarz','3:6','3:6',''],
+  matches_red = [
+    [0, 'Honza Schwarz', 'Honza Tabach', '', '', ''],
+    [0, 'Honza Schwarz', 'Martin Krupa', '', '', ''],
+    [0, 'Honza Schwarz', 'Peťa Lehnert', '', '', ''],
+    [0, 'Honza Schwarz', 'Mira Kokeš', '', '', ''],
+    [0, 'Honza Schwarz', 'Libor Pícha', '', '', ''],
+    [0, 'Honza Schwarz', 'Petr Osterezy', '', '', ''],
+    [0, 'Honza Schwarz', 'Michal Strakoš', '', '', ''],
+    [0, 'Honza Tabach', 'Martin Krupa', '', '', ''],
+    [0, 'Honza Tabach', 'Peťa Lehnert', '', '', ''],
+    [0, 'Honza Tabach', 'Mira Kokeš', '', '', ''],
+    [0, 'Honza Tabach', 'Libor Pícha', '', '', ''],
+    [0, 'Honza Tabach', 'Petr Osterezy', '', '', ''],
+    [0, 'Honza Tabach', 'Michal Strakoš', '', '', ''],
+    [0, 'Martin Krupa', 'Peťa Lehnert', '', '', ''],
+    [0, 'Martin Krupa', 'Mira Kokeš', '', '', ''],
+    [0, 'Martin Krupa', 'Libor Pícha', '', '', ''],
+    [0, 'Martin Krupa', 'Petr Osterezy', '', '', ''],
+    [0, 'Martin Krupa', 'Michal Strakoš', '', '', ''],
+    [0, 'Peťa Lehnert', 'Mira Kokeš', '', '', ''],
+    [0, 'Peťa Lehnert', 'Libor Pícha', '', '', ''],
+    [0, 'Peťa Lehnert', 'Petr Osterezy', '', '', ''],
+    [0, 'Peťa Lehnert', 'Michal Strakoš', '', '', ''],
+    [0, 'Mira Kokeš', 'Libor Pícha', '', '', ''],
+    [0, 'Mira Kokeš', 'Petr Osterezy', '', '', ''],
+    [0, 'Mira Kokeš', 'Michal Strakoš', '', '', ''],
+    [0, 'Libor Pícha', 'Petr Osterezy', '', '', ''],
+    [0, 'Libor Pícha', 'Michal Strakoš', '', '', ''],
+    [0, 'Petr Osterezy', 'Michal Strakoš', '', '', ''],
   ]
 
-  matches_red = []
+  matches_blue = [
+    [0, 'Tomáš Bartoň', 'Radim Běčák', '', '', ''],
+    [0, 'Tomáš Bartoň', 'Pavel Mžik', '', '', ''],
+    [0, 'Tomáš Bartoň', 'Libor Stanislav', '', '', ''],
+    [0, 'Tomáš Bartoň', 'Leoš Rek', '', '', ''],
+    [0, 'Tomáš Bartoň', 'Zdenek Kocián', '', '', ''],
+    [0, 'Tomáš Bartoň', 'Peťa Kutáč', '', '', ''],
+    [0, 'Tomáš Bartoň', 'Marin Indrák', '', '', ''],
+    [0, 'Radim Běčák', 'Pavel Mžik', '', '', ''],
+    [0, 'Radim Běčák', 'Libor Stanislav', '', '', ''],
+    [0, 'Radim Běčák', 'Leoš Rek', '', '', ''],
+    [0, 'Radim Běčák', 'Zdenek Kocián', '', '', ''],
+    [0, 'Radim Běčák', 'Peťa Kutáč', '', '', ''],
+    [0, 'Radim Běčák', 'Marin Indrák', '', '', ''],
+    [0, 'Pavel Mžik', 'Libor Stanislav', '', '', ''],
+    [0, 'Pavel Mžik', 'Leoš Rek', '', '', ''],
+    [0, 'Pavel Mžik', 'Zdenek Kocián', '', '', ''],
+    [0, 'Pavel Mžik', 'Peťa Kutáč', '', '', ''],
+    [0, 'Pavel Mžik', 'Marin Indrák', '', '', ''],
+    [0, 'Libor Stanislav', 'Leoš Rek', '', '', ''],
+    [0, 'Libor Stanislav', 'Zdenek Kocián', '', '', ''],
+    [0, 'Libor Stanislav', 'Peťa Kutáč', '', '', ''],
+    [0, 'Libor Stanislav', 'Marin Indrák', '', '', ''],
+    [0, 'Leoš Rek', 'Zdenek Kocián', '', '', ''],
+    [0, 'Leoš Rek', 'Peťa Kutáč', '', '', ''],
+    [0, 'Leoš Rek', 'Marin Indrák', '', '', ''],
+    [0, 'Zdenek Kocián', 'Peťa Kutáč', '', '', ''],
+    [0, 'Zdenek Kocián', 'Marin Indrák', '', '', ''],
+    [0, 'Peťa Kutáč', 'Marin Indrák', '', '', ''],
+  ]
 
-  players = ['Pavel Mžik', 'Martin Krupa', 'Mira Kokeš', 'Leoš Rek', 'Honza Schwarz', 'Michal Strakoš', 'Tomáš Bartoň', 'Peťa Lehnert', 'Libor Stanislav', 'Radim Běčák', 'Honza Tabach']
-  matches_count = matches_blue.count
 %>
 
 <!-- Content -->
@@ -77,29 +77,59 @@
 
         <!-- Nav tabs -->
         <ul class="nav nav-tabs" role="tablist">
-          <li role="presentation" class="active"><a href="#blue" aria-controls="blue" role="tab" data-toggle="tab">Výsledky zápasů</a></li>
-          <li role="presentation"><a href="#red" aria-controls="red" role="tab" data-toggle="tab">Neodehrané zápasy</a></li>
+          <li role="presentation" class="active"><a href="#red" aria-controls="red" role="tab" data-toggle="tab">Červená skupina</a></li>
+          <li role="presentation"><a href="#blue" aria-controls="blue" role="tab" data-toggle="tab">Modrá skupina</a></li>
         </ul>
 
         <!-- Tab panes -->
         <div class="tab-content">
 
-          <div role="tabpanel" class="tab-pane active" id="blue">
+          <div role="tabpanel" class="tab-pane active" id="red">
             <div class="space20"></div>
 
             <table class="table table-bordered">
                 <tr class="result">
-                  <th class="v-middle" style="width: 5%;">#</th>
-                  <th class="v-middle" colspan="3" style="width: 50%;"></th>
-                  <th class="v-middle" style="width: 15%">1. set</th>
-                  <th class="v-middle" style="width: 15%">2. set</th>
-                  <th class="v-middle" style="width: 15%">3. set</th>
+                  <th class="v-middle lightred" style="width: 5%;">#</th>
+                  <th class="v-middle lightred" colspan="3" style="width: 50%;"></th>
+                  <th class="v-middle lightred" stylpe="width: 15%">1. set</th>
+                  <th class="v-middle lightred" style="width: 15%">2. set</th>
+                  <th class="v-middle lightred" style="width: 15%">3. set</th>
+                </tr>
+
+                <% matches_red.each_with_index do |m, index| %>
+
+                  <tr class="result">
+                    <td style="width: 5%;"><%= index + 1 %></td>
+                    <td style="width: 23%;" class="<%= 'lightred' if m[0] == 1 %>"><%= m[1] %></td>
+                    <td style="width: 4%;">:</td>
+                    <td style="width: 23%;" class="<%= 'lightred' if m[0] == 2 %>"><%= m[2] %></td>
+                    <td style="width: 15%;"><%= m[3] %></td>
+                    <td style="width: 15%;"><%= m[4] %></td>
+                    <td style="width: 15%;"><%= m[5] %></td>
+                  </tr>
+
+                  <% end %>
+
+            </table>
+
+          </div>
+
+          <div role="tabpanel" class="tab-pane" id="blue">
+            <div class="space20"></div>
+
+            <table class="table table-bordered">
+                <tr class="result">
+                  <th class="v-middle lightblue" style="width: 5%;">#</th>
+                  <th class="v-middle lightblue" colspan="3" style="width: 50%;"></th>
+                  <th class="v-middle lightblue" style="width: 15%">1. set</th>
+                  <th class="v-middle lightblue" style="width: 15%">2. set</th>
+                  <th class="v-middle lightblue" style="width: 15%">3. set</th>
                 </tr>
 
                 <% matches_blue.each_with_index do |m, index| %>
 
                   <tr class="result">
-                    <td style="width: 5%;"><%= matches_count - index %></td>
+                    <td style="width: 5%;"><%= index + 1 %></td>
                     <td style="width: 23%;" class="<%= 'lightblue' if m[0] == 1 %>"><%= m[1] %></td>
                     <td style="width: 4%;">:</td>
                     <td style="width: 23%;" class="<%= 'lightblue' if m[0] == 2 %>"><%= m[2] %></td>
@@ -114,29 +144,6 @@
 
           </div>
 
-          <div role="tabpanel" class="tab-pane" id="red">
-            <div class="space20"></div>
-
-            <table class="table table-bordered">
-                <tr class="result">
-                  <th class="v-middle" style="width: 5%;">#</th>
-                  <th class="v-middle" colspan="3" style="width: 50%;"></th>
-                </tr>
-
-                <% matches_red.each_with_index do |m, index| %>
-
-                  <tr class="result">
-                    <td style="width: 5%;"><%= index + 1 %></td>
-                    <td style="width: 23%;" class="<%= 'lightred' if m[0] == 1 %>"><%= m[1] %></td>
-                    <td style="width: 4%;">:</td>
-                    <td style="width: 23%;" class="<%= 'lightred' if m[0] == 2 %>"><%= m[2] %></td>
-                  </tr>
-
-                  <% end %>
-
-            </table>
-
-          </div>
 
         </div>
 
