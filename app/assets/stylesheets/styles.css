@@ -969,6 +969,15 @@ td.lightgreen, th.lightgreen {
   background: #a4ffd3 !important;
 }
 
+td.white, th.white {
+  background: #fff !important;
+  color: #3b3b3b;
+}
+
+td.bordered, th.bordered {
+  border:6px solid white !important;
+}
+
 td.bold {
   font-weight: bold;
 }

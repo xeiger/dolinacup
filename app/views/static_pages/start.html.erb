@@ -1,30 +1,78 @@
-<%= render :partial => 'partials/titlebar', locals: {title: 'Rozpis zápasů na 11.6.'} %>
+<%= render :partial => 'partials/titlebar', locals: {title: 'Vyřazovací část'} %>
 
 <%
+  table_up = [
+    ['Honza Schwarz', '' , '', ''],
+    ['', '' , '', ''],
+    ['Radim Běčák', '' , '', ''],
 
-  coutr_1 = [
-    ['08:00 - 10:00', 'Libor Pícha', 'Honza Schwarz'],
-    ['10:00 - 12:00', '', ''],
-    ['12:00 - 14:00', 'Libor Pícha', 'Mira Kokeš'],
-    ['14:00 - 16:00', 'Peťa Lehnert', 'Petr Osterezy'],
-    ['16:00 - 18:00', '', ''],
+    ['', '' , '', ''],
+
+    ['xx', '' , '', ''],
+    ['', '' , '', ''],
+    ['Tomáš Bartoň', '' , '', ''],
+
+    ['', '' , '', ''],
+
+    ['xx', '' , '', ''],
+    ['', '' , '', ''],
+    ['Libor Stanislav', '' , '', ''],
+
+    ['', '' , '', ''],
+
+    ['xx', '' , '', ''],
+    ['', '' , '', ''],
+    ['Pavel Mžík', '' , '', ''],
   ]
 
-  coutr_2 = [
-    ['08:00 - 10:00', 'Tomáš Bartoň', 'Libor Stanislav'],
-    ['10:00 - 12:00', 'Zdeněk Kocián', 'Leoš Rek'],
-    ['12:00 - 14:00', 'Leoš Rek', 'Libor Stanislav'],
-    ['14:00 - 16:00', 'Zdeněk Kocián', 'Pavel Mžik'],
-    ['16:00 - 18:00', 'Tomáš Bartoň', 'Martin Indrák'],
+  table_down = [
+    ['Peťa Lehnert', '' , '', ''],
+    ['', '' , '', ''],
+    ['Martin Indrák', '' , '', ''],
+
+    ['', '' , '', ''],
+
+    ['Petr Osterezy', '' , '', ''],
+    ['', '' , '', ''],
+    ['Peťa Kutáč', '' , '', ''],
+
+    ['', '' , '', ''],
+
+    ['Libor Pícha', '' , '', ''],
+    ['', '' , '', ''],
+    ['Leoš Rek', '' , '', ''],
+
+    ['', '' , '', ''],
+
+    ['Mira Kokeš', '' , '', ''],
+    ['', '' , '', ''],
+    ['Zdeněk Kocián', '' , '', ''],
   ]
 
-  coutr_3 = [
-    ['08:00 - 10:00', '', ''],
-    ['10:00 - 12:00', 'Peťa Kutáč', 'Radim Běčák'],
-    ['12:00 - 14:00', '', ''],
-    ['14:00 - 16:00', '', ''],
-    ['16:00 - 18:00', '', ''],
+  filled_cells = [
+    ['lightred', 'white', 'white', 'white'],
+    ['', 'lightred', 'white', 'white'],
+    ['lightred', 'white', 'white', 'white'],
+
+    ['white', 'white', 'lightred', 'white'],
+
+    ['lightred', 'white', 'white', 'white'],
+    ['', 'lightred', 'white', 'white'],
+    ['lightred', 'white', 'white', 'white'],
+
+    ['white', 'white', 'white', 'lightred'],
+
+    ['lightred', 'white', 'white', 'white'],
+    ['', 'lightred', 'white', 'white'],
+    ['lightred', 'white', 'white', 'white'],
+
+    ['white', 'white', 'lightred', 'white'],
+
+    ['lightred', 'white', 'white', 'white'],
+    ['', 'lightred', 'white', 'white'],
+    ['lightred', 'white', 'white', 'white'],
   ]
+
 %>
 
 <div id="content">
@@ -35,77 +83,301 @@
 
         <div class="space30"></div>
 
-        <div class="f-center">
-          <div class="head-info"><b>Kurt č. 1</b></div>
-        </div>
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" role="tablist">
+          <li role="presentation" class="active"><a href="#up" aria-controls="up" role="tab" data-toggle="tab">o 1. - 8. místo</a></li>
+          <li role="presentation"><a href="#down" aria-controls="down" role="tab" data-toggle="tab">o 9. - 16. místo</a></li>
+        </ul>
 
-        <table class="table table-bordered">
-          <tr class="result">
-            <th class="v-middle lightred" style="width: 20%;">Čas</th>
-            <th class="v-middle lightred" colspan="3" style="width: 80%;"></th>
-          </tr>
+        <!-- Tab panes -->
+        <div class="tab-content">
 
-          <% coutr_1.each_with_index do |m, index| %>
+          <div role="tabpanel" class="tab-pane active" id="up">
+            <div class="space10"></div>
 
-            <tr class="result">
-              <td style="width: 20%;"><%= m[0] %></td>
-              <td style="width: 35%;"><%= m[1] %></td>
-              <td style="width: 10%;">:</td>
-              <td style="width: 35%;"><%= m[2] %></td>
-            </tr>
+            <table class="table table-bordered">
 
-          <% end %>
-        </table>
+              <tr class="result" style="line-height: 40px; min-height: 40px; height: 40px;" >
+                <th class="v-middle bordered white" style="font-size: 16px; width: 25%;">Čtvrtfinále</th>
+                <th class="v-middle bordered white" style="font-size: 16px; width: 25%;">Semifinále</th>
+                <th class="v-middle bordered white" style="font-size: 16px; width: 25%;">Finále</th>
+                <th class="v-middle bordered white" style="font-size: 16px; width: 25%;">Držitel zlatých trenek</th>
+              </tr>
 
-        <div class="space20"></div>
+              <% table_up.each_with_index do |row, r_index| %>
+                <tr class="result" style="line-height: 35px; min-height: 35px; height: 35px;">
+
+                  <% row.each_with_index do |col, c_index| %>
+                    <% 
+                      clazz = filled_cells[r_index][c_index]
+                    %>
+                    <td class="v-middle bordered <%= clazz %>" style="font-size: 14px; width: 25%;"><%=raw col %></td>
+                  <% end %>
+
+                </tr>
+              <% end %>
+
+            </table>
+
+            <table class="table table-bordered">
+
+              <tr class="result" style="line-height: 40px; min-height: 40px; height: 40px;" >
+                <th class="v-middle bordered white" style="font-size: 14px; width: 25%;"></th>
+                <th class="v-middle bordered white" style="font-size: 14px; width: 25%;"></th>
+                <th colspan="2" class="v-middle bordered white" style="font-size: 16px; width: 25%;">O 3. místo</th>
+              </tr>
+
+              <tr class="result" style="line-height: 35px; min-height: 35px; height: 35px;">
+                <td class="v-middle bordered white" style="font-size: 14px; width: 25%;"></td>
+                <td class="v-middle bordered white" style="font-size: 14px; width: 25%;"></td>
+                <td class="v-middle bordered" style="font-size: 14px; width: 25%;"></td>
+                <td class="v-middle bordered white" style="font-size: 14px; width: 25%;"></td>
+              </tr>
+              <tr class="result" style="line-height: 35px; min-height: 35px; height: 35px;">
+                <td class="v-middle bordered white" style="font-size: 14px; width: 25%;"></td>
+                <td class="v-middle bordered white" style="font-size: 14px; width: 25%;"></td>
+                <td class="v-middle bordered white" style="font-size: 14px; width: 25%;"></td>
+                <td class="v-middle bordered" style="font-size: 14px; width: 25%;"></td>
+              </tr>
+              <tr class="result" style="line-height: 35px; min-height: 35px; height: 35px;">
+                <td class="v-middle bordered white" style="font-size: 14px; width: 25%;"></td>
+                <td class="v-middle bordered white" style="font-size: 14px; width: 25%;"></td>
+                <td class="v-middle bordered" style="font-size: 14px; width: 25%;"></td>
+                <td class="v-middle bordered white" style="font-size: 14px; width: 25%;"></td>
+              </tr>
+
+            </table>
+
+            <table class="table table-bordered">
+
+              <tr class="result" style="line-height: 40px; min-height: 40px; height: 40px;" >
+                <th colspan="2"class="v-middle bordered white" style="font-size: 16px; width: 25%;">O 5.místo</th>
+                <th class="v-middle bordered white" style="font-size: 14px; width: 25%;"></th>
+                <th class="v-middle bordered white" style="font-size: 14px; width: 25%;"></th>
+              </tr>
+
+              <tr class="result" style="line-height: 35px; min-height: 35px; height: 35px;">
+                <td class="v-middle bordered lightred" style="font-size: 14px; width: 25%;"></td>
+                <td class="v-middle bordered white" style="font-size: 14px; width: 25%;"></td>
+                <td class="v-middle bordered white" style="font-size: 14px; width: 25%;"></td>
+                <td class="v-middle bordered white" style="font-size: 14px; width: 25%;"></td>
+              </tr>
+              <tr class="result" style="line-height: 35px; min-height: 35px; height: 35px;">
+                <td class="v-middle bordered" style="font-size: 14px; width: 25%;"></td>
+                <td class="v-middle bordered lightred" style="font-size: 14px; width: 25%;"></td>
+                <td class="v-middle bordered white" style="font-size: 14px; width: 25%;"></td>
+                <td class="v-middle bordered white" style="font-size: 14px; width: 25%;"></td>
+              </tr>
+              <tr class="result" style="line-height: 35px; min-height: 35px; height: 35px;">
+                <td class="v-middle bordered lightred" style="font-size: 14px; width: 25%;"></td>
+                <td class="v-middle bordered white" style="font-size: 14px; width: 25%;"></td>
+                <td class="v-middle bordered white" style="font-size: 14px; width: 25%;"></td>
+                <td class="v-middle bordered white" style="font-size: 14px; width: 25%;"></td>
+              </tr>
+
+              <tr class="result" style="line-height: 35px; min-height: 35px; height: 35px;">
+                <td class="v-middle bordered white" style="font-size: 14px; width: 25%;"></td>
+                <td class="v-middle bordered white" style="font-size: 14px; width: 25%;"></td>
+                <td class="v-middle bordered lightred" style="font-size: 14px; width: 25%;"></td>
+                <td class="v-middle bordered white" style="font-size: 14px; width: 25%;"></td>
+              </tr>
+
+              <tr class="result" style="line-height: 35px; min-height: 35px; height: 35px;">
+                <td class="v-middle bordered lightred" style="font-size: 14px; width: 25%;"></td>
+                <td class="v-middle bordered white" style="font-size: 14px; width: 25%;"></td>
+                <td class="v-middle bordered white" style="font-size: 14px; width: 25%;"></td>
+                <td class="v-middle bordered white" style="font-size: 14px; width: 25%;"></td>
+              </tr>
+              <tr class="result" style="line-height: 35px; min-height: 35px; height: 35px;">
+                <td class="v-middle bordered" style="font-size: 14px; width: 25%;"></td>
+                <td class="v-middle bordered lightred" style="font-size: 14px; width: 25%;"></td>
+                <td class="v-middle bordered white" style="font-size: 14px; width: 25%;"></td>
+                <td class="v-middle bordered white" style="font-size: 14px; width: 25%;"></td>
+              </tr>
+              <tr class="result" style="line-height: 35px; min-height: 35px; height: 35px;">
+                <td class="v-middle bordered lightred" style="font-size: 14px; width: 25%;"></td>
+                <td class="v-middle bordered white" style="font-size: 14px; width: 25%;"></td>
+                <td class="v-middle bordered white" style="font-size: 14px; width: 25%;"></td>
+                <td class="v-middle bordered white" style="font-size: 14px; width: 25%;"></td>
+              </tr>
+
+            </table>
+
+            <table class="table table-bordered">
+
+              <tr class="result" style="line-height: 40px; min-height: 40px; height: 40px;" >
+                <th class="v-middle bordered white" style="font-size: 14px; width: 25%;"></th>
+                <th class="v-middle bordered white" style="font-size: 14px; width: 25%;"></th>
+                <th colspan="2" class="v-middle bordered white" style="font-size: 16px; width: 25%;">O 7. místo</th>
+              </tr>
+
+              <tr class="result" style="line-height: 35px; min-height: 35px; height: 35px;">
+                <td class="v-middle bordered white" style="font-size: 14px; width: 25%;"></td>
+                <td class="v-middle bordered white" style="font-size: 14px; width: 25%;"></td>
+                <td class="v-middle bordered" style="font-size: 14px; width: 25%;"></td>
+                <td class="v-middle bordered white" style="font-size: 14px; width: 25%;"></td>
+              </tr>
+              <tr class="result" style="line-height: 35px; min-height: 35px; height: 35px;">
+                <td class="v-middle bordered white" style="font-size: 14px; width: 25%;"></td>
+                <td class="v-middle bordered white" style="font-size: 14px; width: 25%;"></td>
+                <td class="v-middle bordered white" style="font-size: 14px; width: 25%;"></td>
+                <td class="v-middle bordered" style="font-size: 14px; width: 25%;"></td>
+              </tr>
+              <tr class="result" style="line-height: 35px; min-height: 35px; height: 35px;">
+                <td class="v-middle bordered white" style="font-size: 14px; width: 25%;"></td>
+                <td class="v-middle bordered white" style="font-size: 14px; width: 25%;"></td>
+                <td class="v-middle bordered" style="font-size: 14px; width: 25%;"></td>
+                <td class="v-middle bordered white" style="font-size: 14px; width: 25%;"></td>
+              </tr>
+
+            </table>
 
 
-        <div class="f-center">
-          <div class="head-info"><b>Kurt č. 2</b></div>
-        </div>
+          </div>
 
-        <table class="table table-bordered">
-          <tr class="result">
-            <th class="v-middle lightblue" style="width: 20%;">Čas</th>
-            <th class="v-middle lightblue" colspan="3" style="width: 80%;"></th>
-          </tr>
+          <div role="tabpanel" class="tab-pane" id="down">
+            <div class="space10"></div>
 
-          <% coutr_2.each_with_index do |m, index| %>
+            <table class="table table-bordered">
 
-            <tr class="result">
-              <td style="width: 20%;"><%= m[0] %></td>
-              <td style="width: 35%;"><%= m[1] %></td>
-              <td style="width: 10%;">:</td>
-              <td style="width: 35%;"><%= m[2] %></td>
-            </tr>
+              <tr class="result" style="line-height: 40px; min-height: 40px; height: 40px;" >
+                <th class="v-middle bordered white" style="font-size: 16px; width: 25%;">Čtvrtfinále</th>
+                <th class="v-middle bordered white" style="font-size: 16px; width: 25%;">Semifinále</th>
+                <th class="v-middle bordered white" style="font-size: 16px; width: 25%;">Finále (o 9. místo)</th>
+                <th class="v-middle bordered white" style="font-size: 16px; width: 25%;"></th>
+              </tr>
 
-          <% end %>
-        </table>
+              <% table_down.each_with_index do |row, r_index| %>
+                <tr class="result" style="line-height: 35px; min-height: 35px; height: 35px;">
 
-        <div class="space20"></div>
+                  <% row.each_with_index do |col, c_index| %>
+                    <% 
+                      clazz = filled_cells[r_index][c_index] 
+                      clazz = 'lightblue' if clazz.eql?('lightred')
+                    %>
+                    <td class="v-middle bordered <%= clazz %>" style="font-size: 14px; width: 25%;"><%=raw col %></td>
+                  <% end %>
+
+                </tr>
+              <% end %>
+
+            </table>
+
+            <table class="table table-bordered">
+
+              <tr class="result" style="line-height: 40px; min-height: 40px; height: 40px;" >
+                <th class="v-middle bordered white" style="font-size: 14px; width: 25%;"></th>
+                <th class="v-middle bordered white" style="font-size: 14px; width: 25%;"></th>
+                <th colspan="2" class="v-middle bordered white" style="font-size: 16px; width: 25%;">O 11. místo</th>
+              </tr>
+
+              <tr class="result" style="line-height: 35px; min-height: 35px; height: 35px;">
+                <td class="v-middle bordered white" style="font-size: 14px; width: 25%;"></td>
+                <td class="v-middle bordered white" style="font-size: 14px; width: 25%;"></td>
+                <td class="v-middle bordered" style="font-size: 14px; width: 25%;"></td>
+                <td class="v-middle bordered white" style="font-size: 14px; width: 25%;"></td>
+              </tr>
+              <tr class="result" style="line-height: 35px; min-height: 35px; height: 35px;">
+                <td class="v-middle bordered white" style="font-size: 14px; width: 25%;"></td>
+                <td class="v-middle bordered white" style="font-size: 14px; width: 25%;"></td>
+                <td class="v-middle bordered white" style="font-size: 14px; width: 25%;"></td>
+                <td class="v-middle bordered" style="font-size: 14px; width: 25%;"></td>
+              </tr>
+              <tr class="result" style="line-height: 35px; min-height: 35px; height: 35px;">
+                <td class="v-middle bordered white" style="font-size: 14px; width: 25%;"></td>
+                <td class="v-middle bordered white" style="font-size: 14px; width: 25%;"></td>
+                <td class="v-middle bordered" style="font-size: 14px; width: 25%;"></td>
+                <td class="v-middle bordered white" style="font-size: 14px; width: 25%;"></td>
+              </tr>
+
+            </table>
+
+            <table class="table table-bordered">
+
+              <tr class="result" style="line-height: 40px; min-height: 40px; height: 40px;" >
+                <th colspan="2"class="v-middle bordered white" style="font-size: 16px; width: 25%;">O 13.místo</th>
+                <th class="v-middle bordered white" style="font-size: 14px; width: 25%;"></th>
+                <th class="v-middle bordered white" style="font-size: 14px; width: 25%;"></th>
+              </tr>
+
+              <tr class="result" style="line-height: 35px; min-height: 35px; height: 35px;">
+                <td class="v-middle bordered lightblue" style="font-size: 14px; width: 25%;"></td>
+                <td class="v-middle bordered white" style="font-size: 14px; width: 25%;"></td>
+                <td class="v-middle bordered white" style="font-size: 14px; width: 25%;"></td>
+                <td class="v-middle bordered white" style="font-size: 14px; width: 25%;"></td>
+              </tr>
+              <tr class="result" style="line-height: 35px; min-height: 35px; height: 35px;">
+                <td class="v-middle bordered" style="font-size: 14px; width: 25%;"></td>
+                <td class="v-middle bordered lightblue" style="font-size: 14px; width: 25%;"></td>
+                <td class="v-middle bordered white" style="font-size: 14px; width: 25%;"></td>
+                <td class="v-middle bordered white" style="font-size: 14px; width: 25%;"></td>
+              </tr>
+              <tr class="result" style="line-height: 35px; min-height: 35px; height: 35px;">
+                <td class="v-middle bordered lightblue" style="font-size: 14px; width: 25%;"></td>
+                <td class="v-middle bordered white" style="font-size: 14px; width: 25%;"></td>
+                <td class="v-middle bordered white" style="font-size: 14px; width: 25%;"></td>
+                <td class="v-middle bordered white" style="font-size: 14px; width: 25%;"></td>
+              </tr>
+
+              <tr class="result" style="line-height: 35px; min-height: 35px; height: 35px;">
+                <td class="v-middle bordered white" style="font-size: 14px; width: 25%;"></td>
+                <td class="v-middle bordered white" style="font-size: 14px; width: 25%;"></td>
+                <td class="v-middle bordered lightblue" style="font-size: 14px; width: 25%;"></td>
+                <td class="v-middle bordered white" style="font-size: 14px; width: 25%;"></td>
+              </tr>
+
+              <tr class="result" style="line-height: 35px; min-height: 35px; height: 35px;">
+                <td class="v-middle bordered lightblue" style="font-size: 14px; width: 25%;"></td>
+                <td class="v-middle bordered white" style="font-size: 14px; width: 25%;"></td>
+                <td class="v-middle bordered white" style="font-size: 14px; width: 25%;"></td>
+                <td class="v-middle bordered white" style="font-size: 14px; width: 25%;"></td>
+              </tr>
+              <tr class="result" style="line-height: 35px; min-height: 35px; height: 35px;">
+                <td class="v-middle bordered" style="font-size: 14px; width: 25%;"></td>
+                <td class="v-middle bordered lightblue" style="font-size: 14px; width: 25%;"></td>
+                <td class="v-middle bordered white" style="font-size: 14px; width: 25%;"></td>
+                <td class="v-middle bordered white" style="font-size: 14px; width: 25%;"></td>
+              </tr>
+              <tr class="result" style="line-height: 35px; min-height: 35px; height: 35px;">
+                <td class="v-middle bordered lightblue" style="font-size: 14px; width: 25%;"></td>
+                <td class="v-middle bordered white" style="font-size: 14px; width: 25%;"></td>
+                <td class="v-middle bordered white" style="font-size: 14px; width: 25%;"></td>
+                <td class="v-middle bordered white" style="font-size: 14px; width: 25%;"></td>
+              </tr>
+
+            </table>
+
+            <table class="table table-bordered">
+
+              <tr class="result" style="line-height: 40px; min-height: 40px; height: 40px;" >
+                <th class="v-middle bordered white" style="font-size: 14px; width: 25%;"></th>
+                <th class="v-middle bordered white" style="font-size: 14px; width: 25%;"></th>
+                <th colspan="2" class="v-middle bordered white" style="font-size: 16px; width: 25%;">O 15. místo</th>
+              </tr>
+
+              <tr class="result" style="line-height: 35px; min-height: 35px; height: 35px;">
+                <td class="v-middle bordered white" style="font-size: 14px; width: 25%;"></td>
+                <td class="v-middle bordered white" style="font-size: 14px; width: 25%;"></td>
+                <td class="v-middle bordered" style="font-size: 14px; width: 25%;"></td>
+                <td class="v-middle bordered white" style="font-size: 14px; width: 25%;"></td>
+              </tr>
+              <tr class="result" style="line-height: 35px; min-height: 35px; height: 35px;">
+                <td class="v-middle bordered white" style="font-size: 14px; width: 25%;"></td>
+                <td class="v-middle bordered white" style="font-size: 14px; width: 25%;"></td>
+                <td class="v-middle bordered white" style="font-size: 14px; width: 25%;"></td>
+                <td class="v-middle bordered" style="font-size: 14px; width: 25%;"></td>
+              </tr>
+              <tr class="result" style="line-height: 35px; min-height: 35px; height: 35px;">
+                <td class="v-middle bordered white" style="font-size: 14px; width: 25%;"></td>
+                <td class="v-middle bordered white" style="font-size: 14px; width: 25%;"></td>
+                <td class="v-middle bordered" style="font-size: 14px; width: 25%;"></td>
+                <td class="v-middle bordered white" style="font-size: 14px; width: 25%;"></td>
+              </tr>
+
+            </table>
 
 
-        <div class="f-center">
-          <div class="head-info"><b>Kurt č. 3</b></div>
-        </div>
-
-        <table class="table table-bordered">
-          <tr class="result">
-            <th class="v-middle" style="width: 20%;">Čas</th>
-            <th class="v-middle" colspan="3" style="width: 80%;"></th>
-          </tr>
-
-          <% coutr_3.each_with_index do |m, index| %>
-
-            <tr class="result">
-              <td style="width: 20%;"><%= m[0] %></td>
-              <td style="width: 35%;"><%= m[1] %></td>
-              <td style="width: 10%;">:</td>
-              <td style="width: 35%;"><%= m[2] %></td>
-            </tr>
-
-          <% end %>
-        </table>
+          </div>
 
 
 
@@ -115,3 +387,4 @@
 
   </div>
 </div>
+

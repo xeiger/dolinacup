@@ -1,0 +1,117 @@
+<%= render :partial => 'partials/titlebar', locals: {title: 'Rozpis zápasů na 11.6.'} %>
+
+<%
+
+  coutr_1 = [
+    ['08:00 - 10:00', 'Libor Pícha', 'Honza Schwarz'],
+    ['10:00 - 12:00', '', ''],
+    ['12:00 - 14:00', 'Libor Pícha', 'Mira Kokeš'],
+    ['14:00 - 16:00', 'Peťa Lehnert', 'Petr Osterezy'],
+    ['16:00 - 18:00', '', ''],
+  ]
+
+  coutr_2 = [
+    ['08:00 - 10:00', 'Tomáš Bartoň', 'Libor Stanislav'],
+    ['10:00 - 12:00', 'Zdeněk Kocián', 'Leoš Rek'],
+    ['12:00 - 14:00', 'Leoš Rek', 'Libor Stanislav'],
+    ['14:00 - 16:00', 'Zdeněk Kocián', 'Pavel Mžik'],
+    ['16:00 - 18:00', 'Tomáš Bartoň', 'Martin Indrák'],
+  ]
+
+  coutr_3 = [
+    ['08:00 - 10:00', '', ''],
+    ['10:00 - 12:00', 'Peťa Kutáč', 'Radim Běčák'],
+    ['12:00 - 14:00', '', ''],
+    ['14:00 - 16:00', '', ''],
+    ['16:00 - 18:00', '', ''],
+  ]
+%>
+
+<div id="content">
+  <div class="container">
+
+    <div class="row">
+      <div class="col-md-12">
+
+        <div class="space30"></div>
+
+        <div class="f-center">
+          <div class="head-info"><b>Kurt č. 1</b></div>
+        </div>
+
+        <table class="table table-bordered">
+          <tr class="result">
+            <th class="v-middle lightred" style="width: 20%;">Čas</th>
+            <th class="v-middle lightred" colspan="3" style="width: 80%;"></th>
+          </tr>
+
+          <% coutr_1.each_with_index do |m, index| %>
+
+            <tr class="result">
+              <td style="width: 20%;"><%= m[0] %></td>
+              <td style="width: 35%;"><%= m[1] %></td>
+              <td style="width: 10%;">:</td>
+              <td style="width: 35%;"><%= m[2] %></td>
+            </tr>
+
+          <% end %>
+        </table>
+
+        <div class="space20"></div>
+
+
+        <div class="f-center">
+          <div class="head-info"><b>Kurt č. 2</b></div>
+        </div>
+
+        <table class="table table-bordered">
+          <tr class="result">
+            <th class="v-middle lightblue" style="width: 20%;">Čas</th>
+            <th class="v-middle lightblue" colspan="3" style="width: 80%;"></th>
+          </tr>
+
+          <% coutr_2.each_with_index do |m, index| %>
+
+            <tr class="result">
+              <td style="width: 20%;"><%= m[0] %></td>
+              <td style="width: 35%;"><%= m[1] %></td>
+              <td style="width: 10%;">:</td>
+              <td style="width: 35%;"><%= m[2] %></td>
+            </tr>
+
+          <% end %>
+        </table>
+
+        <div class="space20"></div>
+
+
+        <div class="f-center">
+          <div class="head-info"><b>Kurt č. 3</b></div>
+        </div>
+
+        <table class="table table-bordered">
+          <tr class="result">
+            <th class="v-middle" style="width: 20%;">Čas</th>
+            <th class="v-middle" colspan="3" style="width: 80%;"></th>
+          </tr>
+
+          <% coutr_3.each_with_index do |m, index| %>
+
+            <tr class="result">
+              <td style="width: 20%;"><%= m[0] %></td>
+              <td style="width: 35%;"><%= m[1] %></td>
+              <td style="width: 10%;">:</td>
+              <td style="width: 35%;"><%= m[2] %></td>
+            </tr>
+
+          <% end %>
+        </table>
+
+
+
+      </div>
+    </div>
+    <div class="space50"></div> 
+
+  </div>
+</div>
