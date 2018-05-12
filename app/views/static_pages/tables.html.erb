@@ -1,28 +1,22 @@
-<%= render :partial => 'partials/titlebar', locals: {title: 'Tabulky'} %>
+<%= render :partial => 'partials/titlebar', locals: {title: 'Tabulka'} %>
+
 <%
 
-  table_red = [
-    ['', 'Honza<br>Schwarz', 'Honza<br>Tabach', 'Martin<br>Krupa', 'Peťa<br>Lehnert', 'Mira<br>Kokeš', 'Libor<br>Pícha', 'Petr<br>Osterezy', 'Michal<br>Strakoš', 'Sety', 'Body', 'Pořadí'],
-    ['Honza<br>Schwarz', '', '2:0', '2:0', '2:0', '2:0', '2:0', '2:0', '2:1', '14:1', '7', '1.'],
-    ['Honza<br>Tabach', '0:2', '', '0:2', '2:0', '2:0', '2:0', '2:0', '0:2', '8:6', '4', '4.'],
-    ['Martin<br>Krupa', '0:2', '2:0', '', '2:0', '2:0', '2:1', '2:1', '1:2', '11:6', '5', '2.'],
-    ['Peťa<br>Lehnert', '0:2', '0:2', '0:2', '', '2:1', '2:1', '2:0', '0:2', '6:10', '3', '5.'],
-    ['Mira<br>Kokeš', '0:2', '0:2', '0:2', '1:2', '', '0:2', '0:2', '0:2', '1:14', '0', '8.'],
-    ['Libor<br>Pícha', '0:2', '0:2', '1:2', '1:2', '2:0', '', '1:2', '2:0', '5:10', '2', '7.'],
-    ['Petr<br>Osterezy', '0:2', '0:2', '1:2', '0:2', '2:0', '2:1', '', '2:0', '7:9', '3', '6.'],
-    ['Michal<br>Strakoš', '1:2', '2:0', '2:1', '2:0', '2:0', '0:2', '0:2', '', '9:7', '4', '3.']
-  ]
-
-  table_blue = [
-    ['', 'Tomáš<br>Bartoň', 'Radim<br>Běčák', 'Pavel<br>Mžik', 'Libor<br>Stanislav', 'Leoš<br>Rek', 'Zdeněk<br>Kocián', 'Peťa<br>Kutáč', 'Martin<br>Indrák', 'Sety', 'Body', 'Pořadí'],
-    ['Tomáš<br>Bartoň', '', '2:1', '1:2', '2:0', '2:0', '2:1', '0:0', '2:0', '11:4', '5', '2.'],
-    ['Radim<br>Běčák', '1:2', '', '0:2', '0:2', '2:0', '2:1', '2:0', '2:0', '9:7', '4', '4.'],
-    ['Pavel<br>Mžik', '2:1', '2:0', '', '2:0', '2:0', '2:0', '0:0', '2:0', '12:1', '6', '1.'],
-    ['Libor<br>Stanislav', '0:2', '2:0', '0:2', '', '2:0', '2:0', '2:0', '2:0', '10:4', '5', '3.'],
-    ['Leoš<br>Rek', '0:2', '0:2', '0:2', '0:2', '', '1:2', '2:0', '2:0', '5:10', '2', '6.'],
-    ['Zdeněk<br>Kocián', '1:2', '1:2', '0:2', '0:2', '2:1', '', '2:0', '2:0', '8:9', '3', '5.'],
-    ['Peťa<br>Kutáč', '0:0', '0:2', '0:0', '0:2', '0:2', '0:2', '', '2:0', '2:8', '1', '7.'],
-    ['Martin<br>Indrák', '0:2', '0:2', '0:2', '0:2', '0:2', '0:2', '0:2', '', '0:14', '0', '8.'],
+  table = [
+    ['', 'Tomáš<br>Bartoň', 'Pavel<br>Mžik', 'Libor<br>Stanislav', 'Honza<br>Schwarz', 'Martin<br>Krupa', 'Radim<br>Běčák', 'Peťa<br>Lehnert', 'Honza<br>Tabach', 'Mira<br>Kokeš', 'Peťa<br>Kutáč', 'Petr<br>Osterezy', 'Martin<br>Indrák', 'Vláďa<br>Vašut', 'Sety', 'Body', 'Pořadí'],
+    ['Tomáš<br>Bartoň', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''],
+    ['Pavel<br>Mžik', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''],
+    ['Libor<br>Stanislav', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''],
+    ['Honza<br>Schwarz', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''],
+    ['Martin<br>Krupa', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''],
+    ['Radim<br>Běčák', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''],
+    ['Peťa<br>Lehnert', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''],
+    ['Honza<br>Tabach', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''],
+    ['Mira<br>Kokeš', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''],
+    ['Peťa<br>Kutáč', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''],
+    ['Petr<br>Osterezy', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''],
+    ['Martin<br>Indrák', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''],
+    ['Vláďa<br>Vašut', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '']
   ]
 
 %>
@@ -36,71 +30,27 @@
 
         <div class="space30"></div>
 
-        <!-- Nav tabs -->
-        <ul class="nav nav-tabs" role="tablist">
-          <li role="presentation" class="active"><a href="#red" aria-controls="red" role="tab" data-toggle="tab">Červená skupina</a></li>
-          <li role="presentation"><a href="#blue" aria-controls="blue" role="tab" data-toggle="tab">Modrá skupina</a></li>
-        </ul>
+        <table class="table table-bordered">
+          <% table.each_with_index do |row, r_index| %>
+            <tr class="result" style="line-height: 50px; min-height: 50px; height: 50px;">
 
-        <!-- Tab panes -->
-        <div class="tab-content">
-
-          <div role="tabpanel" class="tab-pane active" id="red">
-            <div class="space10"></div>
-
-            <table class="table table-bordered">
-              <% table_red.each_with_index do |row, r_index| %>
-                <tr class="result" style="line-height: 50px; min-height: 50px; height: 50px;">
-
-                  <% row.each_with_index do |col, c_index| %>
-                    <%
-                      width = c_index < 9 ? '8%' : '6%'
-                      clss = r_index == c_index ? 'lightred' : ''
-                      clss << 'lightgreen bold' if c_index > 8
-                    %>
-                    <% if (r_index == 0 and c_index > 0) or (r_index > 0 and c_index ==0) %>
-                      <th class="v-middle" style="font-size: 12px; width: <%= width %>"><%=raw col %></th>
-                    <% else %>
-                      <td style="width: <%= width %>" class="v-middle <%= clss %>"><%=raw col %></td>
-                    <% end %>
-                  <% end %>
-
-                </tr>
+              <% row.each_with_index do |col, c_index| %>
+                <%
+                  width = c_index < 14 ? '6%' : '5%'
+                  clss = r_index == c_index ? 'lightred' : ''
+                  clss << 'lightgreen bold' if c_index > 13
+                %>
+                <% if (r_index == 0 and c_index > 0) or (r_index > 0 and c_index ==0) %>
+                  <th class="v-middle" style="font-size: 12px; width: <%= width %>"><%=raw col %></th>
+                <% else %>
+                  <td style="width: <%= width %>" class="v-middle <%= clss %>"><%=raw col %></td>
+                <% end %>
               <% end %>
 
-            </table>
+            </tr>
+          <% end %>
 
-          </div>
-
-          <div role="tabpanel" class="tab-pane" id="blue">
-            <div class="space10"></div>
-
-            <table class="table table-bordered">
-              <% table_blue.each_with_index do |row, r_index| %>
-                <tr class="result" style="line-height: 50px; min-height: 50px; height: 50px;">
-
-                  <% row.each_with_index do |col, c_index| %>
-                    <%
-                      width = c_index < 9 ? '8%' : '6%'
-                      clss = r_index == c_index ? 'lightblue' : ''
-                      clss << 'lightgreen bold' if c_index > 8
-                    %>
-                    <% if (r_index == 0 and c_index > 0) or (r_index > 0 and c_index ==0) %>
-                      <th class="v-middle" style="font-size: 12px; width: <%= width %>"><%=raw col %></th>
-                    <% else %>
-                      <td style="width: <%= width %>" class="v-middle <%= clss %>"><%=raw col %></td>
-                    <% end %>
-                  <% end %>
-
-                </tr>
-              <% end %>
-
-            </table>
-
-          </div>
-
-
-        </div>
+        </table>
 
       </div>
     </div>

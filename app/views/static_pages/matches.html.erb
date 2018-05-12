@@ -2,66 +2,91 @@
 
 <%
 
-  matches_red = [
-    [2, 'Mira Kokeš', 'Petr Osterezy', '1:6', '3:6', ''],
-    [1, 'Honza Schwarz', 'Peťa Lehnert', '6:2', '6:2', ''],
-    [1, 'Honza Schwarz', 'Libor Pícha', '6:4', '6:3', ''],
-    [1, 'Martin Krupa', 'Peťa Lehnert', '6:3', '6:2', ''],
-    [1, 'Martin Krupa', 'Mira Kokeš', '6:4', '6:0', ''],
-    [2, 'Peťa Lehnert', 'Michal Strakoš', '1:6', '3:6', ''],
-    [2, 'Mira Kokeš', 'Michal Strakoš', '2:6', '2:6', ''],
-    [1, 'Martin Krupa', 'Libor Pícha', '4:6', '6:2', '6:1'],
-    [2, 'Honza Tabach', 'Michal Strakoš', '5:7', '1:6', ''],
-    [2, 'Mira Kokeš', 'Libor Pícha', '2:6', '2:6', ''],
-    [1, 'Peťa Lehnert', 'Libor Pícha', '4:6', '6:4', '6:0'],
-    [1, 'Martin Krupa', 'Petr Osterezy', '6:4', '6:7', '6:1'],
-    [1, 'Peťa Lehnert', 'Petr Osterezy', '6:4', '7:6', ''],
-    [1, 'Honza Schwarz', 'Martin Krupa', '6:1', '6:2', ''],
-    [1, 'Honza Schwarz', 'Petr Osterezy', '6:2', '6:2', ''],
-    [2, 'Martin Krupa', 'Michal Strakoš', '4:6', '6:1', '1:6'],
-    [1, 'Honza Tabach', 'Mira Kokeš', '6:2', '6:1', ''],
-    [1, 'Honza Schwarz', 'Michal Strakoš', '2:6', '6:2', '6:4'],
-    [1, 'Honza Schwarz', 'Honza Tabach', '6:0', '6:3', ''],
-    [1, 'Honza Tabach', 'Petr Osterezy', '6:1', '6:2', ''],
-    [1, 'Honza Tabach', 'Peťa Lehnert', '6:3', '6:4', ''],
-    [1, 'Petr Osterezy', 'Michal Strakoš', 'skreč.', '', ''],
-    [1, 'Libor Pícha', 'Michal Strakoš', 'skreč.', '', ''],
-    [2, 'Libor Pícha', 'Petr Osterezy', '2:6', '6:2', '1:6'],
-    [1, 'Honza Tabach', 'Libor Pícha', '6:2', '7:5', ''],
-    [1, 'Honza Schwarz', 'Mira Kokeš', 'skreč.', '', ''],
-    [1, 'Peťa Lehnert', 'Mira Kokeš', '4:6', '6:3', 'TB 10:8'],
-    [2, 'Honza Tabach', 'Martin Krupa', '3:6', '4:6', ''],
-  ]
+  players = ["Tomáš Bartoň", "Pavel Mžik", "Libor Stanislav", "Honza Schwarz", "Martin Krupa", "Radim Běčák", "Peťa Lehnert", "Honza Tabach", "Mira Kokeš", "Peťa Kutáč", "Petr Osterezy", "Martin Indrák", "Vláďa Vašut"]
 
-  matches_blue = [
-    [1, 'Radim Běčák', 'Zdeněk Kocián', '6:0', '4:6', '6:1'],
-    [2, 'Leoš Rek', 'Zdeněk Kocián', '7:5', '0:6', '3:6'],
-    [1, 'Pavel Mžik', 'Zdeněk Kocián', '6:2', '6:3', ''],
-    [1, 'Pavel Mžik', 'Libor Stanislav', '6:0', '6:3', ''],
-    [1, 'Radim Běčák', 'Peťa Kutáč', '6:0', '6:1', ''],
-    [1, 'Radim Běčák', 'Marin Indrák', '6:2', '6:2', ''],
-    [1, 'Libor Stanislav', 'Leoš Rek', '6:1', '7:5', ''],
-    [1, 'Pavel Mžik', 'Leoš Rek', '6:0', '6:2', ''],
-    [1, 'Pavel Mžik', 'Marin Indrák', '6:1', '6:1', ''],
-    [1, 'Peťa Kutáč', 'Marin Indrák', '6:2', '7:5', ''],
-    [1, 'Zdeněk Kocián', 'Marin Indrák', '6:3', '6:1', ''],
-    [2, 'Radim Běčák', 'Pavel Mžik', '3:6', '3:6', ''],
-    [1, 'Radim Běčák', 'Leoš Rek', '6:2', '6:3', ''],
-    [2, 'Tomáš Bartoň', 'Pavel Mžik', '6:4', '4:6', '4:6'],
-    [1, 'Leoš Rek', 'Marin Indrák', '6:3', '6:2', ''],
-    [1, 'Tomáš Bartoň', 'Libor Stanislav', '6:1', '6:4', ''],
-    [1, 'Tomáš Bartoň', 'Marin Indrák', '6:2', '6:2', ''],
-    [1, 'Tomáš Bartoň', 'Radim Běčák', '6:7', '7:6', 'TB 9:7'],
-    [1, 'Libor Stanislav', 'Marin Indrák', '6:1', '6:1', ''],
-    [2, 'Radim Běčák', 'Libor Stanislav', '2:6', '2:6', ''],
-    [1, 'Tomáš Bartoň', 'Zdeněk Kocián', '1:6', '6:4', '6:0'],
-    [1, 'Libor Stanislav', 'Peťa Kutáč', '6:2', '6:4', ''],
-    [1, 'Libor Stanislav', 'Zdeněk Kocián', '6:3', '6:4', ''],
-    [1, 'Tomáš Bartoň', 'Leoš Rek', '6:2', '6:2', ''],
-    [1, 'Leoš Rek', 'Peťa Kutáč', 'skreč.', '', ''],
-    [1, 'Zdeněk Kocián', 'Peťa Kutáč', 'skreč.', '', ''],
-    [0, 'Tomáš Bartoň', 'Peťa Kutáč', 'neodehráno', '', ''],
-    [0, 'Pavel Mžik', 'Peťa Kutáč', 'neodehráno', '', ''],
+  results = [
+  ]
+    #[2, 'Mira Kokeš', 'Petr Osterezy', '1:6', '3:6', ''],
+
+  matches = [
+    ['Tomáš Bartoň', 'Martin Indrák'],
+    ['Tomáš Bartoň', 'Honza Tabach'],
+    ['Tomáš Bartoň', 'Honza Schwarz'],
+    ['Tomáš Bartoň', 'Vláďa Vašut'],
+    ['Tomáš Bartoň', 'Mira Kokeš'],
+    ['Tomáš Bartoň', 'Martin Krupa'],
+    ['Pavel Mžik', 'Mira Kokeš'],
+    ['Pavel Mžik', 'Martin Krupa'],
+    ['Pavel Mžik', 'Tomáš Bartoň'],
+    ['Pavel Mžik', 'Peťa Kutáč'],
+    ['Pavel Mžik', 'Radim Běčák'],
+    ['Pavel Mžik', 'Vláďa Vašut'],
+    ['Libor Stanislav', 'Peťa Kutáč'],
+    ['Libor Stanislav', 'Radim Běčák'],
+    ['Libor Stanislav', 'Pavel Mžik'],
+    ['Libor Stanislav', 'Petr Osterezy'],
+    ['Libor Stanislav', 'Peťa Lehnert'],
+    ['Libor Stanislav', 'Tomáš Bartoň'],
+    ['Honza Schwarz', 'Peťa Lehnert'],
+    ['Honza Schwarz', 'Libor Stanislav'],
+    ['Honza Schwarz', 'Martin Indrák'],
+    ['Honza Schwarz', 'Honza Tabach'],
+    ['Honza Schwarz', 'Pavel Mžik'],
+    ['Honza Schwarz', 'Petr Osterezy'],
+    ['Martin Krupa', 'Honza Tabach'],
+    ['Martin Krupa', 'Honza Schwarz'],
+    ['Martin Krupa', 'Vláďa Vašut'],
+    ['Martin Krupa', 'Mira Kokeš'],
+    ['Martin Krupa', 'Libor Stanislav'],
+    ['Martin Krupa', 'Martin Indrák'],
+    ['Radim Běčák', 'Martin Krupa'],
+    ['Radim Běčák', 'Tomáš Bartoň'],
+    ['Radim Běčák', 'Peťa Kutáč'],
+    ['Radim Běčák', 'Honza Schwarz'],
+    ['Radim Běčák', 'Vláďa Vašut'],
+    ['Radim Běčák', 'Mira Kokeš'],
+    ['Peťa Lehnert', 'Radim Běčák'],
+    ['Peťa Lehnert', 'Pavel Mžik'],
+    ['Peťa Lehnert', 'Petr Osterezy'],
+    ['Peťa Lehnert', 'Martin Krupa'],
+    ['Peťa Lehnert', 'Tomáš Bartoň'],
+    ['Peťa Lehnert', 'Peťa Kutáč'],
+    ['Honza Tabach', 'Libor Stanislav'],
+    ['Honza Tabach', 'Martin Indrák'],
+    ['Honza Tabach', 'Radim Běčák'],
+    ['Honza Tabach', 'Pavel Mžik'],
+    ['Honza Tabach', 'Petr Osterezy'],
+    ['Honza Tabach', 'Peťa Lehnert'],
+    ['Mira Kokeš', 'Honza Schwarz'],
+    ['Mira Kokeš', 'Vláďa Vašut'],
+    ['Mira Kokeš', 'Peťa Lehnert'],
+    ['Mira Kokeš', 'Libor Stanislav'],
+    ['Mira Kokeš', 'Martin Indrák'],
+    ['Mira Kokeš', 'Honza Tabach'],
+    ['Peťa Kutáč', 'Tomáš Bartoň'],
+    ['Peťa Kutáč', 'Honza Tabach'],
+    ['Peťa Kutáč', 'Honza Schwarz'],
+    ['Peťa Kutáč', 'Vláďa Vašut'],
+    ['Peťa Kutáč', 'Mira Kokeš'],
+    ['Peťa Kutáč', 'Martin Krupa'],
+    ['Petr Osterezy', 'Pavel Mžik'],
+    ['Petr Osterezy', 'Mira Kokeš'],
+    ['Petr Osterezy', 'Martin Krupa'],
+    ['Petr Osterezy', 'Tomáš Bartoň'],
+    ['Petr Osterezy', 'Peťa Kutáč'],
+    ['Petr Osterezy', 'Radim Běčák'],
+    ['Martin Indrák', 'Peťa Kutáč'],
+    ['Martin Indrák', 'Radim Běčák'],
+    ['Martin Indrák', 'Pavel Mžik'],
+    ['Martin Indrák', 'Petr Osterezy'],
+    ['Martin Indrák', 'Peťa Lehnert'],
+    ['Martin Indrák', 'Libor Stanislav'],
+    ['Vláďa Vašut', 'Petr Osterezy'],
+    ['Vláďa Vašut', 'Peťa Lehnert'],
+    ['Vláďa Vašut', 'Libor Stanislav'],
+    ['Vláďa Vašut', 'Martin Indrák'],
+    ['Vláďa Vašut', 'Honza Tabach'],
+    ['Vláďa Vašut', 'Honza Schwarz']
   ]
 
 %>
@@ -77,17 +102,27 @@
 
         <!-- Nav tabs -->
         <ul class="nav nav-tabs" role="tablist">
-          <li role="presentation" class="active"><a href="#red" aria-controls="red" role="tab" data-toggle="tab">Červená skupina</a></li>
-          <li role="presentation"><a href="#blue" aria-controls="blue" role="tab" data-toggle="tab">Modrá skupina</a></li>
+          <li role="presentation" class="active"><a href="#results" aria-controls="results" role="tab" data-toggle="tab">Výsledky zápasů</a></li>
+          <li role="presentation"><a href="#matches" aria-controls="matches" role="tab" data-toggle="tab">Neodehrané zápasy</a></li>
         </ul>
 
         <!-- Tab panes -->
         <div class="tab-content">
 
-          <div role="tabpanel" class="tab-pane active" id="red">
+          <div role="tabpanel" class="tab-pane active" id="results">
             <div class="space20"></div>
 
-            <table class="table table-bordered">
+            <div class="form-group" style="width: 30%">
+              <select class="form-control" id="sel_results" data-table-name="results">
+                <option value="all">Všichni hráči</option>
+                <% players.each do |p| %>
+                  <option value="<%= p %>"><%= p %></option>
+                <% end %>
+              </select>
+            </div>
+
+            <table class="table table-bordered" id="results">
+              <thead>
                 <tr class="result">
                   <th class="v-middle lightred" style="width: 5%;">#</th>
                   <th class="v-middle lightred" colspan="3" style="width: 50%;"></th>
@@ -95,8 +130,10 @@
                   <th class="v-middle lightred" style="width: 15%">2. set</th>
                   <th class="v-middle lightred" style="width: 15%">3. set</th>
                 </tr>
+              </thead>
 
-                <% matches_red.each_with_index do |m, index| %>
+              <tbody>
+                <% results.each_with_index do |m, index| %>
 
                   <tr class="result">
                     <td style="width: 5%;"><%= index + 1 %></td>
@@ -108,37 +145,45 @@
                     <td style="width: 15%;"><%= m[5] %></td>
                   </tr>
 
-                  <% end %>
+                <% end %>
+              </tbody>
 
             </table>
 
           </div>
 
-          <div role="tabpanel" class="tab-pane" id="blue">
+          <div role="tabpanel" class="tab-pane" id="matches">
             <div class="space20"></div>
 
-            <table class="table table-bordered">
-                <tr class="result">
-                  <th class="v-middle lightblue" style="width: 5%;">#</th>
-                  <th class="v-middle lightblue" colspan="3" style="width: 50%;"></th>
-                  <th class="v-middle lightblue" style="width: 15%">1. set</th>
-                  <th class="v-middle lightblue" style="width: 15%">2. set</th>
-                  <th class="v-middle lightblue" style="width: 15%">3. set</th>
-                </tr>
+            <div class="form-group" style="width: 30%">
+              <select class="form-control" id="sel_matches" data-table-name="matches">
+                <option value="all">Všichni hráči</option>
+                <% players.each do |p| %>
+                  <option value="<%= p %>"><%= p %></option>
+                <% end %>
+              </select>
+            </div>
 
-                <% matches_blue.each_with_index do |m, index| %>
+            <table class="table table-bordered" id="matches">
+              <thead>
+                <tr class="result">
+                  <th class="v-middle lightred" style="width: 10%;">#</th>
+                  <th class="v-middle lightred" colspan="3" style="width: 90%;"></th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <% matches.each_with_index do |m, index| %>
 
                   <tr class="result">
-                    <td style="width: 5%;"><%= index + 1 %></td>
-                    <td style="width: 23%;" class="<%= 'lightblue' if m[0] == 1 %>"><%= m[1] %></td>
-                    <td style="width: 4%;">:</td>
-                    <td style="width: 23%;" class="<%= 'lightblue' if m[0] == 2 %>"><%= m[2] %></td>
-                    <td style="width: 15%;"><%= m[3] %></td>
-                    <td style="width: 15%;"><%= m[4] %></td>
-                    <td style="width: 15%;"><%= m[5] %></td>
+                    <td style="width: 10%;"><%= index + 1 %></td>
+                    <td style="width: 40%;"><%= m[0] %></td>
+                    <td style="width: 10%;">:</td>
+                    <td style="width: 40%;"><%= m[1] %></td>
                   </tr>
 
-                  <% end %>
+                <% end %>
+              </tbody>
 
             </table>
 
@@ -155,3 +200,42 @@
 </div>
 <!-- Content End -->
 
+<script type="text/javascript">
+
+  $("[id^='sel_']").change(function () {
+      var select = $(this);
+      if(select.val() == "all") select.addClass("empty");
+      else select.removeClass("empty");
+      select.find("option").css('color', 'black');
+      select.find("option[value='all']").css('color', '#aaaaaa');
+
+      filter_rows(select.val(), select.data('table-name'));
+
+  });
+  $("[id^='select']").change();
+
+
+  function filter_rows(value, table) {
+
+    var jo = $("table[id='" + table + "']").find("tbody tr");
+    if (value == "all") {
+        $("table[id='" + table + "'] td").removeClass("selected");
+        jo.show();
+        return;
+    }
+
+    jo.hide();
+
+    jo.filter(function (i, v) {
+        var $t = $(this);
+        if ($t.is(":contains('" + value + "')")) {return true;}
+        else return false;
+    })
+    //show the rows that match.
+    .show();
+
+    $("table[id='" + table + "'] td:contains('" + value + "')").addClass("selected");
+    $("table[id='" + table + "'] td:not(:contains('" + value + "'))").removeClass("selected");
+  }
+
+</script>

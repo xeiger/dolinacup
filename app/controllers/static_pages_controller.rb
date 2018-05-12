@@ -7,6 +7,9 @@ class StaticPagesController < ApplicationController
     render layout: 'welcome'
   end
 
+  def rules
+  end
+
   def start
   end
 

@@ -960,6 +960,10 @@ tr.even_red > td {
 td.lightblue, th.lightblue {
   background: #8ec0d0 !important;
 }
+td.selected, th.selected {
+  font-weight: bold !important;
+}
+
 
 td.lightred, th.lightred {
   background: #fb8865 !important;

@@ -5,8 +5,8 @@
       <a href="#" title="Hide navigation">Hide navigation</a>
       <ul class="clearfix" style="padding-left: 0px !important;">
         <li class="<%= 'active' if params[:action].eql?('home') %>"><%= link_to 'Úvod', home_page_url %></li>
-        <li class="<%= 'active' if params[:action].eql?('start') %>"><%= link_to 'Vyřazovací část', start_page_path %></li>
-        <li class="<%= 'active' if params[:action].eql?('tables') %>"><%= link_to 'Základní skupiny', tables_page_path %></li>
+        <li class="<%= 'active' if params[:action].eql?('rules') %>"><%= link_to 'Pravidla turnaje', rules_page_path %></li>
+        <li class="<%= 'active' if params[:action].eql?('tables') %>"><%= link_to 'Tabulka', tables_page_path %></li>
         <li class="<%= 'active' if params[:action].eql?('matches') %>"><%= link_to 'Výsledky zápasů', matches_page_path %></li>
       </ul>
     </nav>
