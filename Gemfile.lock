@@ -69,7 +69,6 @@ GEM
     minitest (5.11.3)
     nokogiri (1.10.3)
       mini_portile2 (~> 2.4.0)
-    pg (1.1.4)
     rack (1.6.11)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -134,7 +133,6 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   less-rails
-  pg
   rails (= 4.2.11)
   rails_12factor
   therubyracer
